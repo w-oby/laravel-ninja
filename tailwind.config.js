@@ -12,7 +12,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Rubik', ...defaultTheme.fontFamily.sans],
+                sans: ['Rubik', '"Comic Sans MS"', 'Comic Sans', ...defaultTheme.fontFamily.sans],
             },
         },
     },

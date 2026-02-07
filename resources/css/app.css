@@ -5,8 +5,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gray-100 text-gray-700;
-  font-family: "Rubik";
+  @apply bg-gray-100 text-gray-700 font-sans;
 }
 h1 {
   @apply text-2xl font-bold text-red-500;
