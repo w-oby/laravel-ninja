@@ -5,7 +5,7 @@
 
     <h2>Register for an Account</h2>
 
-    <label for="name">Email:</label>
+    <label for="name">Name:</label>
     <input 
         type="text"
         name="name"
@@ -14,7 +14,7 @@
 
     >
 
-    <label for="email">Name:</label>
+    <label for="email">Email:</label>
     <input 
         type="email"
         name="email"
