@@ -10,11 +10,12 @@ Route::get('/', function () {
 
 // GET
 Route::get('/register', [AuthController::class, 'showRegister'])->name('show.register');
-Route::get('login', [AuthController::class, 'showLogin'])->name('show.login');
+Route::get('/login', [AuthController::class, 'showLogin'])->name('show.login');
 
 // POST
 Route::post('/register', [AuthController::class, 'register'])->name('register');
-Route::post('login', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/ninjas', [NinjaController::class, 'index'])->name('ninjas.index');
 Route::get('/ninjas/create', [NinjaController::class, 'create'])->name('ninjas.create');
