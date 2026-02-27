@@ -24,6 +24,11 @@
 
       <a href="{{ route('show.register') }}" class="btn">Register</a>
 
+      <form action="{{ route('logout') }}" method="POST" class='m-0'>
+        @csrf
+        <button class="btn">Logout</button>
+      </form>
+
     </nav>
   </header>
 
