@@ -10,6 +10,7 @@ Route::get('/', function () {
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+// GUEST
 Route::middleware('guest')->controller(AuthController::class)->group(function() {
     Route::get('/register', 'showRegister')->name('show.register');
     Route::get('/login', 'showLogin')->name('show.login');
@@ -17,6 +18,7 @@ Route::middleware('guest')->controller(AuthController::class)->group(function() 
     Route::post('/login', 'login')->name('login');
 });
 
+// LOGGED IN USER
 Route::middleware('auth')->controller(NinjaController::class)->group(function() {
     Route::get('/ninjas', 'index')->name('ninjas.index');
     Route::get('/ninjas/create', 'create')->name('ninjas.create');
