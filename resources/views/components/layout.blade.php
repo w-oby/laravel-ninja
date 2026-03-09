@@ -20,16 +20,25 @@
         <a href="{{ route('ninjas.index') }}">Ninja Network</a>
       </h1>
 
-      <a href="{{ route('ninjas.create') }}">Create New Ninja</a>
+      {{-- Guest only content --}}
+      @guest
+        <a href="{{ route('show.login') }}" class="btn">Login</a>
+        <a href="{{ route('show.register') }}" class="btn">Register</a>
+      @endguest
 
-      <a href="{{ route('show.login') }}" class="btn">Login</a>
+      {{-- Logged in user only content --}}
+      @auth
+        <span class="border-r-2 pr-2">
+          Howdy there, {{ Auth::user()->name }}!
+        </span>
 
-      <a href="{{ route('show.register') }}" class="btn">Register</a>
+        <a href="{{ route('ninjas.create') }}">Create New Ninja</a>
 
-      <form action="{{ route('logout') }}" method="POST" class='m-0'>
-        @csrf
-        <button class="btn">Logout</button>
-      </form>
+        <form action="{{ route('logout') }}" method="POST" class='m-0'>
+          @csrf
+          <button class="btn">Logout</button>
+        </form>
+      @endauth
 
     </nav>
   </header>
